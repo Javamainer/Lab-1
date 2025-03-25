@@ -1,3 +1,6 @@
-// 🔧 Zdefiniuj obiekt STATUS_CODE, który przechowuje kody statusu HTTP 302 (FOUND) oraz 404 (NOT_FOUND).
-
-// 🔧 Wyeksportuj STATUS_CODE, który przechowuje kody statusu HTTP.
+module.exports = {
+    OK: 200,
+    NOT_FOUND: 404,
+    SERVER_ERROR: 500
+  };
+  

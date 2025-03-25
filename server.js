@@ -1,10 +1,11 @@
-// 📦 Musisz zaimportować tutaj moduł 'http'.
-// 📦 Żeby użyć tutaj PORT, musisz zaimportować go z modułu konfiguracyjnego z pliku 'config.js'.
-// 📦 Zaimportuj funkcję 'requestRouting' z modułu 'routing/routing.js'.
+const http = require("http");
+const config = require("./config.js");
+const routing = require("./routing/routing.js");
 
-// 🏗 Tutaj, stwórz funkcję 'requestListener, która przekazuje 'request' i 'response' do 'requestRouting'.
+const server = http.createServer((req, res) => {
+  routing.handleRequest(req, res);
+});
 
-// 🏗 Tutaj, stwóz serwer Node.js. Pamiętaj przypisać go do stałej i przekazać mu 'requestListener'.
-
-// 🏗 Uruchom serwer na porcie PORT.
-// Podpowiedź: server.listen(???);
+server.listen(config.PORT, () => {
+  console.log(`Serwer działa na porcie ${config.PORT}`);
+});
